@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Theme & Shape Background ImageView -->
+    <ImageView
+        android:id="@+id/iv_widget_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/widget_bg"
+        android:contentDescription="@null" />
+
+    <!-- Widget Content Container -->
+    <LinearLayout
+        android:id="@+id/widget_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="14dp"
+        android:paddingStart="14dp"
+        android:paddingRight="14dp"
+        android:paddingEnd="14dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
+
+        <!-- Top Header Bar -->
+        <LinearLayout
+            android:id="@+id/layout_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <!-- App Icon -->
+            <ImageView
+                android:id="@+id/iv_icon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:scaleType="fitCenter"
+                android:contentDescription="icon" />
+
+            <TextView
+                android:id="@+id/tv_app_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:layout_marginStart="6dp"
+                android:text="القرآن الكريم"
+                android:textColor="#C5A059"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+
+            <!-- Surah Name Badge -->
+            <TextView
+                android:id="@+id/tv_surah_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/widget_badge_bg"
+                android:paddingLeft="8dp"
+                android:paddingStart="8dp"
+                android:paddingRight="8dp"
+                android:paddingEnd="8dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:text="سورة الفاتحة"
+                android:textColor="#E6D3A3"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+
+            <!-- Ayah Number Badge -->
+            <TextView
+                android:id="@+id/tv_ayah_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginStart="4dp"
+                android:background="@drawable/widget_badge_bg"
+                android:paddingLeft="6dp"
+                android:paddingStart="6dp"
+                android:paddingRight="6dp"
+                android:paddingEnd="6dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:text="آية 1"
+                android:textColor="#B3C5A059"
+                android:textSize="10sp" />
+
+            <!-- Spacer -->
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <!-- Quick Refresh Button -->
+            <ImageView
+                android:id="@+id/btn_refresh_widget"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:scaleType="fitCenter"
+                android:contentDescription="refresh" />
+        </LinearLayout>
+
+        <!-- Quran Ayah Text Bitmap (Supports Custom Arabic Fonts: Amiri, Scheherazade, Uthmani) -->
+        <ImageView
+            android:id="@+id/iv_ayah_text"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="4dp"
+            android:scaleType="fitCenter"
+            android:contentDescription="ayah_text" />
+
+        <!-- Fallback standard TextView if needed -->
+        <TextView
+            android:id="@+id/tv_ayah_text"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="6dp"
+            android:gravity="center"
+            android:visibility="gone"
+            android:ellipsize="end"
+            android:maxLines="4"
+            android:lineSpacingExtra="3dp"
+            android:text="بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ"
+            android:textColor="#FDFBF7"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+
+</RelativeLayout>
